@@ -10,6 +10,8 @@
  *
  */
 
+
+
 module.exports = {
 
   /***************************************************************************
@@ -22,6 +24,11 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  
+  session:{
+    url: "mongodb://127.0.0.1:27017/dj-sessions"
+  },
+  
 
   level: process.env.SAILS_LOG_LEVEL || "info"
 };
