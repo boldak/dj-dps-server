@@ -12,14 +12,14 @@ module.exports = {
     run: function(req, resp) {
 
         var script = req.body.script;
-        
         var state = req.body.state;
-        
-      
         var locale = req.body.locale || "en";
         locale = (locale == "uk") ? "ua" : locale;
 
-        state = (state) || {locale : locale}
+        state = (state) || {
+            locale : locale, 
+            client: req.body.client
+        }
         // console.log(req.host, script, state)
         var executable = new Script()
             .host(req.host)
