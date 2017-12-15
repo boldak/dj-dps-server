@@ -8,21 +8,21 @@ var logger = require("dj-utils").log.global;
 logger.debug("Start DPS Service")
 
 module.exports = {
-
     run: function(req, resp) {
 
         var script = req.body.script;
         var state = req.body.state;
         var locale = req.body.locale || "en";
+        let host = req.host+":"+req.port;
         locale = (locale == "uk") ? "ua" : locale;
 
         state = (state) || {
-            locale : locale, 
-            client: req.body.client
+            locale : locale 
         }
+        state.client = req.body.client;
         // console.log(req.host, script, state)
         var executable = new Script()
-            .host(req.host)
+            .host(host)
             .config(conf)
             .script(script)
             // .state(state)
@@ -34,5 +34,4 @@ module.exports = {
                 resp.send({ type: "error", data: error })
             })
     }
-
 }
