@@ -62,7 +62,7 @@ let storageUtils = require('dj-dps-commands/src/storage/utils')
 let writeFile = Promise.promisify(require('fs').writeFile);
 
 module.exports.bootstrap = function (cb) {
-  sails.log.debug("Initialize DJ Storage service")
+  sails.log.debug("Initialize DJ Data Processing service")
   sails.log.debug("Use DB " + JSON.stringify(sails.config.connections.mongodbServer))
   
   // Restore user defined models
