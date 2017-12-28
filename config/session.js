@@ -71,7 +71,7 @@ module.exports.session = {
   port: process.env.DB_PORT_27017_TCP_PORT || 27017,
   db: 'dj-session',
   collection: 'sessions',
-  url: process.env.MONGOLAB_URI || process.env.MONGODB_URL,
+  url: process.env.MONGOLAB_URI || process.env.MONGODB_URL
 
   /***************************************************************************
   *                                                                          *
@@ -85,7 +85,7 @@ module.exports.session = {
   // username: '',
   // password: '',
   // auto_reconnect: false,
-  ssl: false,
-  stringify: true
+  // ssl: false,
+  // stringify: true
 
 };
